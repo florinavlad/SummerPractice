@@ -203,3 +203,9 @@ align-items: center;
 .login a:hover {
     color:rgb(125, 74, 125)
 }
+
+.cardContainer {
+    border: 3px solid darkcyan;
+    padding: 10px;
+    margin: 4px 4px;
+}
