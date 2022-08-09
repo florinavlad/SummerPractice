@@ -4,62 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Resume</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Resume Maker</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <section class="showcase">
-      <header>
-        <div class="navbar">
-          <a class="active" href="CV.html">Personal CV</a>
-          <a href="Education.html">Education</a>
-          <a href="Experience.html">Experience</a>
-          <!-- <a href="forms.html">Login</a> -->
-        </div>
-        <h2 class="name">Curriculum Vitae</h2>
+      <header class="header">
+        <nav class="navbar">
+          <a href="#" class="name">Curriculum Vitae</a>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="CV.html" class="nav-link">Personal CV</a>
+            </li>
+            <li class="nav-item">
+              <a href="Education.html" class="nav-link">Education</a>
+            </li>
+            <li class="nav-item">
+              <a href="exp.html" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
       </header>
+
       <video src="assets/mainvideo.mp4" muted loop autoplay></video>
 
-      <div class="overlay"></div>
-
       <div class="text">
-        <h2>Create Your CV</h2>
-        <h3>Join Us TO Impress!</h3>
+        <h2>Personal CV</h2>
+        <br />
+        <h3>Vlad Florina-Niculina</h3>
         <p>
-          Stand Out From The Crowd And Get Hired. Our resume builder is powerful
-          and easy to use, with a range of amazing functions.
+          Ready to spread my energy everywhere, but a responsible person at the
+          same time. I like to complete a task and be proud of what I managed to
+          do, concentration and perseverance are the key.
+          <br />
+          I'm always looking to go out of my way and develop my skills.
         </p>
+      </div>
+
+      <div>
+        <img
+          src="assets/Photo.png"
+          alt="Vlad Florina-Niculina"
+          class="profilephoto"
+        />
       </div>
 
       <ul class="social-media">
         <li>
-          <a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png" /></a>
+          <a href="https://www.facebook.com/florina.vlad164"
+            ><img src="https://i.ibb.co/x7P24fL/facebook.png"
+          /></a>
         </li>
         <li>
           <a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" /></a>
         </li>
         <li>
-          <a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png" /></a>
+          <a href="https://www.instagram.com/florina.vlad/"
+            ><img src="https://i.ibb.co/ySwtH4B/instagram.png"
+          /></a>
         </li>
       </ul>
-      <div>
+      <!-- <div>
         <a class="sign" id="sign-link" href="forms.html">Sign Up</a>
-      </div>
-
-      <div class="login">
-        <img src="assets/avatar.jpg" alt="avatar" class="avatar" />
-        <h1>Login</h1>
-        <form>
-          <p>Username</p>
-          <input type="text" name="" placeholder="Enter Username" />
-          <p>Password</p>
-          <input type="password" name="" placeholder="Enter Password" />
-          <input type="submit" name="" value="Login" />
-          <a href="#">Forgot your password?</a>
-          <br />
-          <a href="forms.html">Need an account?</a>
-        </form>
-      </div>
+      </div> -->
     </section>
   </body>
 </html>

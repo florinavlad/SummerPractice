@@ -28,7 +28,7 @@ const experiences = [
   },
 ];
 
-//generate a div for a student received as a parameter
+//generate a div for a experience received as a parameter
 function generateExpCard(experience) {
   const expCard = document.createElement("div");
   expCard.className = "cardContainer";
@@ -54,13 +54,13 @@ function generateExpCard(experience) {
   return expCard;
 }
 
-//generates a div for each student in the list and adds it to the parent div of experienceContainer
+//generates a div for each experience in the list and adds it to the parent div of experienceContainer
 function populateExpContainer(expArray) {
   const mainParent = document.getElementById("experienceContainer"); //identify our parent div container
   expArray.forEach(function (
     experienceObj,
     index
-    //cross the list of students
+    //cross the list of experiences
   ) {
     const userCard = generateExpCard(experienceObj);
     mainParent.appendChild(userCard);
@@ -69,3 +69,21 @@ function populateExpContainer(expArray) {
 
 console.log(generateExpCard(experiences[0]));
 populateExpContainer(experiences);
+
+//navbar
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}
