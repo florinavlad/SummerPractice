@@ -1,8 +1,32 @@
-//navbar
+//get nav with a function
+const loadFile = async (fileName) => {
+  const response = await fetch(fileName);
+  const text = await response.text();
+  return text;
+};
+
+const run = async () => {
+  const navigationBar = await loadFile("nav.html");
+  const header = document.getElementById("header");
+  header.innerHTML = navigationBar;
+};
+run();
+
+// check if current page is login (another metod)
+// const currentLocaton = window.location.href;
+// const returnedArray = currentLocaton.split("/");
+// if ((returnedArray[returnedArray.length - 1] = "login.html")) {
+//   console.log(true);
+// } else {
+//   console.log(false); }
+
+//Navigation Bar
 const navSlide = () => {
   const hamBurger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
   const navItem = document.querySelectorAll(".nav-menu li");
+  console.log(hamBurger);
+
   //Toggle
   hamBurger.addEventListener("click", () => {
     navMenu.classList.toggle("nav-active");
@@ -10,23 +34,17 @@ const navSlide = () => {
     //Animation Delay
     navItem.forEach((link, index) => {
       // console.log(index);
-
       if (link.style.animation) {
         link.style.animation = "";
       } else {
-        link.style.animation = `navFade 0.5s ease forwards ${index / 5 + 1}s`;
+        link.style.animation = `navFade 0.5s ease forwards ${index / 5 + 0.5}s`;
       }
     });
 
     hamBurger.classList.toggle("toggle");
   });
 };
-
 navSlide();
-
-// const app = () => {
-//   navSlide();
-// };
 
 const experiences = [
   {
