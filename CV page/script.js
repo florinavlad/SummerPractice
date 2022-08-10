@@ -1,3 +1,33 @@
+//navbar
+const navSlide = () => {
+  const hamBurger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+  const navItem = document.querySelectorAll(".nav-menu li");
+  //Toggle
+  hamBurger.addEventListener("click", () => {
+    navMenu.classList.toggle("nav-active");
+
+    //Animation Delay
+    navItem.forEach((link, index) => {
+      // console.log(index);
+
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navFade 0.5s ease forwards ${index / 5 + 1}s`;
+      }
+    });
+
+    hamBurger.classList.toggle("toggle");
+  });
+};
+
+navSlide();
+
+// const app = () => {
+//   navSlide();
+// };
+
 const experiences = [
   {
     id: 1,
@@ -69,21 +99,3 @@ function populateExpContainer(expArray) {
 
 console.log(generateExpCard(experiences[0]));
 populateExpContainer(experiences);
-
-//navbar
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-const navLink = document.querySelectorAll(".nav-link");
-
-hamburger.addEventListener("click", mobileMenu);
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
