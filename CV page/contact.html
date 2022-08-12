@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="generic.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="contact.js" defer></script>
+  </head>
+  <body>
+    <header id="header"></header>
+    <div id="overlay" class="contact">
+      <img src="assets/avatar.jpg" alt="avatar" class="avatar" />
+      <h1>Send me a message</h1>
+
+      <form onsubmit="event.preventDefault(); validateForm()">
+        <p>Name</p>
+        <input type="text" id="name" placeholder="Enter your name" />
+        <small class="error"></small>
+
+        <p>Email Adress:</p>
+        <input type="text" id="email" placeholder="Enter email" />
+        <small class="error"></small>
+
+        <p>Message:</p>
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Enter your message"
+        ></textarea>
+        <small class="error"></small>
+
+        <div class="center">
+          <input type="submit" name="sendMessage" value="Send Message" />
+          <p id="success"></p>
+        </div>
+
+        <!-- <a href="#">Do you want my contact?</a>
+        <br /> -->
+      </form>
+    </div>
+  </body>
+</html>

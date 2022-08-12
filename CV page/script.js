@@ -2,14 +2,23 @@
 const loadFile = async (fileName) => {
   const response = await fetch(fileName);
   const text = await response.text();
+
   return text;
 };
 
 const run = async () => {
-  const navigationBar = await loadFile("nav.html");
   const header = document.getElementById("header");
+
+  if (!header) {
+    return;
+  }
+
+  const navigationBar = await loadFile("nav.html");
   header.innerHTML = navigationBar;
+
+  navSlide();
 };
+
 run();
 
 // check if current page is login (another metod)
@@ -44,8 +53,8 @@ const navSlide = () => {
     hamBurger.classList.toggle("toggle");
   });
 };
-navSlide();
 
+//EXPERIENCE
 const experiences = [
   {
     id: 1,
@@ -105,6 +114,11 @@ function generateExpCard(experience) {
 //generates a div for each experience in the list and adds it to the parent div of experienceContainer
 function populateExpContainer(expArray) {
   const mainParent = document.getElementById("experienceContainer"); //identify our parent div container
+
+  if (!mainParent) {
+    return;
+  }
+
   expArray.forEach(function (
     experienceObj,
     index
@@ -117,3 +131,65 @@ function populateExpContainer(expArray) {
 
 console.log(generateExpCard(experiences[0]));
 populateExpContainer(experiences);
+
+//EDUCATION
+const education = [
+  {
+    id: 1,
+    name: "Highschool",
+    Company: '"Vasile Lucaciu" National College',
+    startDate: "09/2015",
+    endDate: "06/2019",
+  },
+
+  {
+    id: 2,
+    name: "University",
+    Company:
+      "Technical University of Cluj-Napoca, Automation and Applied Informatics",
+    startDate: "10/2019",
+    endDate: "Present",
+  },
+];
+
+function generateEduCard(education) {
+  const eduCard = document.createElement("div");
+  eduCard.className = "cardEduContainer";
+
+  const eduName = document.createElement("p");
+  const eduCompany = document.createElement("p");
+  const eduStartDate = document.createElement("p");
+  const eduEndDate = document.createElement("p");
+
+  eduName.innerText = education.name;
+  eduCompany.innerText = education.Company;
+  eduStartDate.innerText = education.startDate;
+  eduEndDate.innerText = education.endDate;
+
+  eduCard.appendChild(eduName);
+  eduCard.appendChild(eduCompany);
+  eduCard.appendChild(eduStartDate);
+  eduCard.appendChild(eduEndDate);
+
+  return eduCard;
+}
+
+function populateEduContainer(eduArray) {
+  const mainParent = document.getElementById("educationContainer"); //identify our parent div container
+
+  if (!mainParent) {
+    return;
+  }
+
+  eduArray.forEach(function (
+    educationObj,
+    index
+    //cross the list of education
+  ) {
+    const userEduCard = generateEduCard(educationObj);
+    mainParent.appendChild(userEduCard);
+  });
+}
+
+console.log(generateEduCard(education[0]));
+populateEduContainer(education);
